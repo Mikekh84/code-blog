@@ -6,8 +6,9 @@ var Article = function(props) {
   this.body = props.body;
 };
 
-Article.prototype.toHTML = function() {
+Article.prototype.toHTML = function(props) {
   return '<article>' + this.title +'</article>'
 };
 
-$('main').append(blog.rawData);
+Article(blog.rawData);
+$('main').append(Article.prototype.toHTML());
