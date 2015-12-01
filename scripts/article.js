@@ -9,3 +9,5 @@ var Article = function(props) = {
 Article.prototyope.toHTML = function() {
   return '<article>' + this.title +'</article>'
 };
+
+$(main).append(blog.rawData);
