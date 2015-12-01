@@ -1,4 +1,4 @@
-var Article = function(props) = {
+var Article = function(props) {
   this.title =  props.title;
   this.author = props.author;
   this.authorUrl = props.authorUrl;
@@ -6,8 +6,8 @@ var Article = function(props) = {
   this.body = props.body;
 };
 
-Article.prototyope.toHTML = function() {
+Article.prototype.toHTML = function() {
   return '<article>' + this.title +'</article>'
 };
 
-$(main).append(blog.rawData);
+$('main').append(blog.rawData);
