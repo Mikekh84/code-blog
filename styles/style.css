@@ -1,0 +1,9 @@
+img.pull-left {
+  max-width: 50px;
+  float:left;
+}
+
+img.pull-right {
+  max-width: 50px;
+  float:right;
+}
