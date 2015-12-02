@@ -4,7 +4,7 @@ var Article = function(props) {
   this.authorUrl = props.authorUrl;
   this.publishedOn = props.publishedOn;
   this.artbody = props.artbody;
-  this.category = props.cat;
+  this.category = props.category;
 };
 
 Article.prototype.toHTML = function() {
