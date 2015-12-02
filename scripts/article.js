@@ -4,19 +4,21 @@ var Article = function(props) {
   this.authorUrl = props.authorUrl;
   this.publishedOn = props.publishedOn;
   this.artbody = props.artbody;
-  this.cat = props.cat;
+  this.category = props.cat;
 };
 
 Article.prototype.toHTML = function() {
   var $data = $('.template').clone();
-  $data.removeClass('.template');
+  $data.removeClass('template');
   $data.attr('id', this.heading);
-  $data.find('.heading').text(this.heading);
-  $data.find('.author').text(this.author);
-  $data.find('.url').text(this.authorUrl);
-  $data.find('.artbody').text(this.artbody);
-  $data.find('.pub').text(this.publishedOn);
-  $data.find('.cat').text(this.cat);
+  $data.find('.heading').html("<p>" + this.heading  + "</p>");
+  $data.find('.author').html("<p>" + this.author + "<p>");
+  $data.find('.url').html("<p>" + this.authorUrl + "</p");
+  $data.find('.artbody').html(this.artbody);
+  $data.find('.pub').html("<p>" + this.publishedOn + "</p>");
+  $data.find('.cat').html("<p>" + this.category + "</p>");
 
   $('main').append($data);
 };
+
+$(document).ready(blog.render());
