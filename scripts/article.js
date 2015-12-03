@@ -6,10 +6,10 @@ var Article = function(props) {
   this.artbody = props.artbody;
   this.category = props.category;
 };
-
 Article.prototype.toHTML = function() {
   var $data = $('.template').clone();
   $data.removeClass('template');
+  $data.addClass(this.heading);
   $data.attr('id', this.heading);
   $data.find('.heading').html("<p>" + this.heading  + "</p>");
   $data.find('.author').html("<p>" + this.author + "<p>");
@@ -17,12 +17,10 @@ Article.prototype.toHTML = function() {
   $data.find('.artbody').html(this.artbody);
   $data.find('.pub').html("<p>" + this.publishedOn + "</p>");
   $data.find('.cat').html("<p>" + this.category + "</p>");
-
   $('main').append($data);
+
+  console.log($data.find('.artbody:first-child').html(this.artbody:));
 };
-
-//Sort Functioin
-
 
 
 $(document).ready(blog.render());
