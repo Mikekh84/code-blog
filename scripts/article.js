@@ -17,10 +17,8 @@ Article.prototype.toHTML = function() {
   $data.find('.artbody').html(this.artbody);
   $data.find('.pub').html("<p>" + this.publishedOn + "</p>");
   $data.find('.cat').html("<p>" + this.category + "</p>");
+  $data.find('.artbody').append('<button>' + 'Show More' + '</button>');
   $('main').append($data);
-
-  console.log($data.find('.artbody:first-child').html(this.artbody:));
 };
-
 
 $(document).ready(blog.render());

@@ -13,9 +13,6 @@ blog.render = function(){
   for (var i = 0; i < blog.rawData.length; i++){
     var art = new Article(blog.rawData[i]);
     art.toHTML();
-  console.log(blog.rawData[i].heading);
   }
-
-
 
 };
