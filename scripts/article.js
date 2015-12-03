@@ -21,4 +21,8 @@ Article.prototype.toHTML = function() {
   $('main').append($data);
 };
 
+//Sort Functioin
+
+
+
 $(document).ready(blog.render());
