@@ -9,7 +9,7 @@ var Article = function(props) {
 Article.prototype.toHTML = function() {
   var $data = $('.template').clone();
   $data.removeClass('template');
-  $data.addClass(this.heading);
+  $data.addClass('article');
   $data.attr('id', this.heading);
   $data.find('.heading').html("<p>" + this.heading  + "</p>");
   $data.find('.author').html("<p>" + this.author + "<p>");
@@ -17,7 +17,7 @@ Article.prototype.toHTML = function() {
   $data.find('.artbody').html(this.artbody);
   $data.find('.pub').html("<p>" + this.publishedOn + "</p>");
   $data.find('.cat').html("<p>" + this.category + "</p>");
-  $data.find('.artbody').append('<button>' + 'Show More' + '</button>');
+  $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
   $('main').append($data);
 };
 

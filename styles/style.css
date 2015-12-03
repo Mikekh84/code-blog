@@ -1,17 +1,18 @@
-img.pull-left {
-  max-width: 30%;
+img {
+  display: block;
+  max-width: 10em;
   float:left;
-  padding: 20px;
+  padding: 2em;
 }
 
-img.pull-right {
-  max-width: 30%;
-  float:right;
-  padding: 20px;
-}
 
 li {
     display: inline;
     list-style-type: none;
-    padding-right: 10px;
+    padding-right: 10em;
+}
+
+article {
+
+
 }
