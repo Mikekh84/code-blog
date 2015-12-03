@@ -1,0 +1,17 @@
+img.pull-left {
+  max-width: 30%;
+  float:left;
+  padding: 20px;
+}
+
+img.pull-right {
+  max-width: 10%;
+  float:right;
+  padding: 20px;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 10px;
+}
