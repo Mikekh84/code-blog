@@ -1,8 +1,7 @@
 img {
-  display: block;
+  display:block;
   max-width: 10em;
-  float:left;
-  padding: 2em;
+  padding: 1em;
 }
 
 
@@ -10,9 +9,4 @@ li {
     display: inline;
     list-style-type: none;
     padding-right: 10em;
-}
-
-article {
-
-
 }

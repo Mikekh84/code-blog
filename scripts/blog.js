@@ -16,12 +16,15 @@ blog.render = function(){
   };
 
   blog.truncateArticles = function() {
+    //this = button el
     $('article p:not(:first-child)').hide();
+    $('article img').hide();
     $('main').on('click', '.button', function(event) {
       event.preventDefault();
       $(this).parent().find('p').fadeIn();
+      $(this).parent().find('img').fadeIn();
       $(this).hide();
-      console.log('this worked')
+
     });
   };
 
