@@ -18,13 +18,11 @@ blog.render = function(){
   blog.truncateArticles = function() {
     //this = button el
     $('article p:not(:first-child)').hide();
-    $('article img').hide();
     $('main').on('click', '.button', function(event) {
       event.preventDefault();
-      $(this).parent().find('p').fadeIn();
-      $(this).parent().find('img').fadeIn();
-      $(this).hide();
-
+      // Trying a toggle Feature -- Seems to work -- Now only targets
+      //not first paragram
+      $(this).parent().find('p:not(:first-child)').toggle();
     });
   };
 
