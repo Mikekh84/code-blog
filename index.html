@@ -14,15 +14,6 @@
         <li>About</li>
       </ul>
 
-      <form>
-        <select>Filters
-          <option class="author">Author</option>
-        </select>
-
-        <select>
-          <option class="category">Category</option>
-        </select>
-      </form>
 
     </nav>
   </header>
@@ -30,12 +21,23 @@
   <body>
 
 
+    <main>
 
 
-      <main>
+      <form>
+        Filters<br/>
+        <select id="authFilter">
+          <option>Author</option>
+        </select>
+
+        <select id="catFilter">
+          <option class="category">Category</option>
+        </select>
+      </form>
+
         <article class="template">
           <h1 class="heading"></h1>
-          <div  class="author"></div>
+          <div class="author"></div>
           <div class="url"></div>
           <div class="artbody"></div>
           <div class="pub"></div>

@@ -26,6 +26,12 @@ blog.render = function(){
     });
   };
 
-blog.truncateArticles();
 
+blog.truncateArticles();
+// blog.popFilters = function() {
+//     $('select.catFilter').html('<option>' + this.category + '</option>')
+//   };
+// }
+//
+// blog.popFilters();
 };

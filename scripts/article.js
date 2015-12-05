@@ -21,4 +21,18 @@ Article.prototype.toHTML = function() {
   $('main').append($data);
 };
 
+
+Article.filterPop = function() {
+  for (var i = 0; i < blog.rawData.length; i++){
+    $('#catFilter').append('<option>' + blog.rawData[0].category + '</option>').addClass(blog.rawData[0].category);
+    if () {
+      $('#catFilter').append('<option>' + blog.rawData[i].category + '</option>').addClass(blog.rawData[i].category);
+    };
+    };
+
+};
 $(document).ready(blog.render());
+Article.filterPop();
+
+
+///// #('*').css('border-style: dotted')
