@@ -2,12 +2,14 @@ var preveiw = {}
 
 preveiw.getFormInfo = function(){
 
-  $('#formInfo').children().on('blur' ,function(){
+  $('#formInfo').children().on('blur' ,function(event){
+
+    event.preventDefault();
     var formHeading = $('#formHeading').val();
     var formAuthor = $('#formAuthor').val();
     var formAuthorUrl = $('#formAuthorUrl').val();
     var formCategory = $('#formCategory').val();
-    var formArtBody = $('#formArtBody').val();
+    var formArtBody = marked($('#formArtBody').val());
 
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -20,7 +22,7 @@ preveiw.getFormInfo = function(){
     $('#preview').find('.heading').html("<p>" + formHeading  + "</p>");
     $('#preview').find('.author').html("<p>" + formAuthor + "<p>");
     $('#preview').find('.url').html("<p>" + formAuthorUrl + "</p");
-    $('#preview').find('.artbody').html(formArtBody);
+    $('#preview').find('.artbody').html(marked(formArtBody));
     $('#preview').find('.pub').html("<p>" + today + "</p>");
     $('#preview').find('.cat').html("<p>" + formCategory + "</p>");
     $('#submitButton').on('click', function(event){
@@ -40,9 +42,6 @@ preveiw.getFormInfo = function(){
 
     })
   })
-
-
-
 }
 // $(function() {
   preveiw.getFormInfo();
