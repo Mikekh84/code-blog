@@ -26,12 +26,49 @@ blog.render = function(){
     });
   };
 
+};
 
-blog.truncateArticles();
-// blog.popFilters = function() {
-//     $('select.catFilter').html('<option>' + this.category + '</option>')
-//   };
-// }
-//
-// blog.popFilters();
+
+
+
+
+
+blog.filterPop = function() {
+  //Sort Method from StackOverflow
+  blog.rawData.sort(function(a, b) {
+    a = a.category;
+    b = b.category;
+    return a<b ? -1 : a>b ? 1 : 0;
+  });
+
+  //Add option to Category dropdown
+  for (var i = 0; i < blog.rawData.length; i++) {
+  var $optionCat = blog.rawData[i].category;
+  if (blog.rawData[i].category !== blog.rawData[i+1].category) {
+    $('#catFilter').append('<option class="'+ $optionCat +'">' + $optionCat + '</option>');
+    // console.log(blog.rawData[0].category);
+  };
+};
+
+blog.filterPopAuthor = function () {
+
+
+
+
+
+
+
+
+}
+//Sort Method from StackOverflow
+blog.rawData.sort(function(a, b) {
+  a = a.author;
+  b = b.author;
+  return a<b ? -1 : a>b ? 1 : 0;
+});
+
+  //ad option to author dropdown.
+  for (var i = 0; i < blog.rawData.length; i++) {
+    $('#authFilter').append('<option>' + blog.rawData[i].author + '</option>')
+  };
 };
