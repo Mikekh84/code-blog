@@ -28,47 +28,38 @@ blog.render = function(){
 
 };
 
+    blog.filterPop = function(){
+      //Sort Method from StackOverflow
+      blog.rawData.sort(function(a, b) {
+        a = a.category;
+        b = b.category;
+        return a<b ? -1 : a>b ? 1 : 0;
+      });
 
-
-
-
-
-blog.filterPop = function() {
-  //Sort Method from StackOverflow
-  blog.rawData.sort(function(a, b) {
-    a = a.category;
-    b = b.category;
-    return a<b ? -1 : a>b ? 1 : 0;
-  });
-
-  //Add option to Category dropdown
-  for (var i = 0; i < blog.rawData.length; i++) {
-  var $optionCat = blog.rawData[i].category;
-  if (blog.rawData[i].category !== blog.rawData[i+1].category) {
-    $('#catFilter').append('<option class="'+ $optionCat +'">' + $optionCat + '</option>');
-    // console.log(blog.rawData[0].category);
-  };
+      //Add option to Category dropdown
+        $('#catFilter').append('<option class="'+ blog.rawData[0].category +'">' + blog.rawData[0].category + '</option>');
+        for (var i = 1; i < blog.rawData.length-1; i++) {
+          var $optionCat = blog.rawData[i].category;
+          if (blog.rawData[i].category !== blog.rawData[i-1].category) {
+            $('#catFilter').append('<option class="'+ $optionCat +'">' + $optionCat + '</option>');
+            // console.log(blog.rawData[0].category);
+          };
+        };
 };
-
-blog.filterPopAuthor = function () {
-
-
-
-
-
-
-
-
-}
-//Sort Method from StackOverflow
-blog.rawData.sort(function(a, b) {
-  a = a.author;
-  b = b.author;
-  return a<b ? -1 : a>b ? 1 : 0;
-});
-
-  //ad option to author dropdown.
-  for (var i = 0; i < blog.rawData.length; i++) {
-    $('#authFilter').append('<option>' + blog.rawData[i].author + '</option>')
+//
+blog.filterPopAuthor = function() {
+    blog.rawData.sort(function(a, b) {
+      a = a.author;
+      b = b.author;
+      return a<b ? -1 : a>b ? 1 : 0;
+      console.log('this works')
+    });
+  $('#authFilter').append('<option class="'+ blog.rawData[0].author +'">' + blog.rawData[0].author + '</option>')
+  for (var i = 1; i < blog.rawData.length; i++){
+    var $optionAuth = blog.rawData[i].author;
+      if($optionAuth !== blog.rawData[i-1].author) {
+    $('#authFilter').append('<option class="'+ blog.rawData[i].author +'">' + blog.rawData[i].author + '</option>');
+    console.log($optionAuth);
+    };
   };
 };
