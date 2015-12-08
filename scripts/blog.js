@@ -52,7 +52,7 @@ blog.filterPopAuthor = function() {
       a = a.author;
       b = b.author;
       return a<b ? -1 : a>b ? 1 : 0;
-    
+
     });
   $('#authFilter').append('<option class="'+ blog.rawData[0].author +'">' + blog.rawData[0].author + '</option>')
   for (var i = 1; i < blog.rawData.length; i++){
@@ -63,3 +63,11 @@ blog.filterPopAuthor = function() {
     };
   };
 };
+
+
+blog.stringRawData = function(data) {
+  var dataString = JSON.stringify(blog.rawData);
+  return dataString;
+  
+}
+blog.stringRawData();
