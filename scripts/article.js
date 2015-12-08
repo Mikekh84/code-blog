@@ -23,7 +23,6 @@ Article.prototype.toHTML = function() {
   var template = Handlebars.compile(source);
   var html = template(this)
   $('main').append(html);
-
 };
 
 

@@ -52,14 +52,14 @@ blog.filterPopAuthor = function() {
       a = a.author;
       b = b.author;
       return a<b ? -1 : a>b ? 1 : 0;
-      console.log('this works')
+    
     });
   $('#authFilter').append('<option class="'+ blog.rawData[0].author +'">' + blog.rawData[0].author + '</option>')
   for (var i = 1; i < blog.rawData.length; i++){
     var $optionAuth = blog.rawData[i].author;
       if($optionAuth !== blog.rawData[i-1].author) {
     $('#authFilter').append('<option class="'+ blog.rawData[i].author +'">' + blog.rawData[i].author + '</option>');
-    console.log($optionAuth);
+    // console.log($optionAuth);
     };
   };
 };
