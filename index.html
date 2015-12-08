@@ -4,6 +4,17 @@
   <head>
     <meta charset="utf-8">
     <link rel = "stylesheet" type= "text/css" href = "styles/style.css"/>
+    <script id="post-template" type="text/x-post-template">
+      <article class="artTemplate">
+        <h1 class="heading">{{heading}}</h1>
+        <div class="author">{{author}}</div>
+        <div class="url">{{authorUrl}}</div>
+        <div class="artbody">{{{artbody}}}</div>
+        <div class="pub">{{publishedOn}}</div>
+        <div class="cat">{{category}}</div>
+        <button class = "button">Show More</button>
+        </article>
+    </script>
     <title>Mike's Blog</title>
   </head>
 
@@ -30,14 +41,15 @@
         </select>
       </form>
 
-      <article class="template">
+      <!-- From previous verison without Handlebars -->
+      <!-- <article class="template">
           <h1 class="heading"></h1>
           <div class="author"></div>
           <div class="url"></div>
           <div class="artbody"></div>
           <div class="pub"></div>
           <div class="cat"></div>
-      </article>
+      </article> -->
   </main>
 
 
