@@ -63,11 +63,3 @@ blog.filterPopAuthor = function() {
     };
   };
 };
-
-
-blog.stringRawData = function(data) {
-  var dataString = JSON.stringify(blog.rawData);
-  return dataString;
-  
-}
-blog.stringRawData();

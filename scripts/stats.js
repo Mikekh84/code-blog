@@ -1,8 +1,15 @@
 var stats = {};
+var statData = '';
 
-var getData = function() {
-  $.get('scripts/blogArticles.js');
-  console.log('got something');
+stats.getData = function () {
+  $.getJSON('scripts/hackerIpsum.json', function(data) {
+    statData = data;
+    console.log(data);
+  }).done(numArticles);
 };
 
-getData();
+
+function numArticles() {
+  $('#stats').html('<p> Number of Articles:' + statData.length + '</p>');
+};
+stats.getData();
