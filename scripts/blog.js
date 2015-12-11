@@ -1,45 +1,44 @@
 var blog = {};
 
 blog.render = function(){
-
   //Sort Method from StackOverflow
   blog.rawData.sort(function(a, b) {
     a = new Date(a.publishedOn);
     b = new Date(b.publishedOn);
     return a>b ? -1 : a<b ? 1 : 0;
   });
-
 //loads the articles
   for (var i = 0; i < blog.rawData.length; i++){
     var art = new Article(blog.rawData[i]);
     art.toHTML();
   };
-
-  blog.truncateArticles = function() {
-    //this = button el
-    $('article p:not(:first-child)').hide();
-    $('main').on('click', '.button', function(event) {
-      event.preventDefault();
-      // Shows more paragrahs. Makes a New Show Less Button. Detaches Show More Button
-      $(this).parent().find('p:not(:first-child)').show();
-      $(this).parent().append('<button class ="less">' + 'Show Less' + "</button>");
-      $(this).detach();
-    });
-
-    $('main').on('click', '.less', function(event) {
-      event.preventDefault();
-      // Hides All But first paragraph.Makes a Show more Button. Detaches show less button.
-      $(this).parent().find('p:not(:first-child)').hide();
-      $(this).parent().append('<button class ="button">' + 'Show More' + "</button>");
-      $(this).detach();
-    });
-
-
-  };
-
+  //Loads the Filter dropdowns.
+  blog.popCatDropDown();
+  blog.popAuthDropDown();
 };
 
-blog.filterPop = function(){
+blog.truncateArticles = function() {
+  //this = button el
+  $('article p:not(:first-child)').hide();
+  $('main').on('click', '.button', function(event) {
+    event.preventDefault();
+    // Shows more paragrahs. Makes a New Show Less Button. Detaches Show More Button
+    $(this).parent().find('p:not(:first-child)').show();
+    $(this).parent().append('<button class ="less">' + 'Show Less' + "</button>");
+    $(this).detach();
+  });
+
+  $('main').on('click', '.less', function(event) {
+    event.preventDefault();
+    // Hides All But first paragraph.Makes a Show more Button. Detaches show less button.
+    $(this).parent().find('p:not(:first-child)').hide();
+    $(this).parent().append('<button class ="button">' + 'Show More' + "</button>");
+    $(this).detach();
+  });
+};
+
+
+blog.popCatDropDown = function(){
   //Sort Method from StackOverflow
   blog.rawData.sort(function(a, b) {
     a = a.category;
@@ -57,7 +56,7 @@ blog.filterPop = function(){
     };
 };
 //
-blog.filterPopAuthor = function() {
+blog.popAuthDropDown = function() {
     blog.rawData.sort(function(a, b) {
       a = a.author;
       b = b.author;

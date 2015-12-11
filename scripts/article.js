@@ -24,8 +24,7 @@ Article.prototype.toHTML = function() {
 
 $(document).ready(blog.render());
 $(document).ready(blog.truncateArticles());
-$(document).ready(blog.filterPop());
-$(document).ready(blog.filterPopAuthor());
+
 
 
 
