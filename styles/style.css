@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 img {
   display:block;
   max-width: 10em;
@@ -20,14 +24,11 @@ ul {
   padding-bottom: 0%;
 }
 
-body {
-  background-color: black;
-
-}
 
 article {
   background-color: #e6e6e6;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 5rem;
 }
 
 header {

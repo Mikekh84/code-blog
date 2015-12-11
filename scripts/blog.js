@@ -28,7 +28,7 @@ blog.render = function(){
 
     $('main').on('click', '.less', function(event) {
       event.preventDefault();
-      // Hides All But first paragraph.Makes a Show more Button. Detaches show less button. 
+      // Hides All But first paragraph.Makes a Show more Button. Detaches show less button.
       $(this).parent().find('p:not(:first-child)').hide();
       $(this).parent().append('<button class ="button">' + 'Show More' + "</button>");
       $(this).detach();
@@ -39,23 +39,22 @@ blog.render = function(){
 
 };
 
-    blog.filterPop = function(){
-      //Sort Method from StackOverflow
-      blog.rawData.sort(function(a, b) {
-        a = a.category;
-        b = b.category;
-        return a<b ? -1 : a>b ? 1 : 0;
-      });
-
-      //Add option to Category dropdown
-        $('#catFilter').append('<option class="'+ blog.rawData[0].category +'">' + blog.rawData[0].category + '</option>');
-        for (var i = 1; i < blog.rawData.length-1; i++) {
-          var $optionCat = blog.rawData[i].category;
-          if (blog.rawData[i].category !== blog.rawData[i-1].category) {
+blog.filterPop = function(){
+  //Sort Method from StackOverflow
+  blog.rawData.sort(function(a, b) {
+    a = a.category;
+    b = b.category;
+    return a<b ? -1 : a>b ? 1 : 0;
+  });
+  //Add option to Category dropdown
+  $('#catFilter').append('<option class="'+ blog.rawData[0].category +'">' + blog.rawData[0].category + '</option>');
+      for (var i = 1; i < blog.rawData.length-1; i++) {
+        var $optionCat = blog.rawData[i].category;
+        if (blog.rawData[i].category !== blog.rawData[i-1].category) {
             $('#catFilter').append('<option class="'+ $optionCat +'">' + $optionCat + '</option>');
             // console.log(blog.rawData[0].category);
-          };
         };
+    };
 };
 //
 blog.filterPopAuthor = function() {
