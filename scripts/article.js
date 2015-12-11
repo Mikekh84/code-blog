@@ -11,12 +11,11 @@ Article.prototype.toHTML = function() {
   $data.removeClass('template');
   $data.addClass('article');
   $data.attr('id', this.heading);
-  $data.find('.heading').html("<p>" + this.heading  + "</p>");
-  $data.find('.author').html("<p>" + this.author + "<p>");
-  $data.find('.url').html("<p>" + this.authorUrl + "</p");
+  $data.find('.heading').html('<p>' + this.heading  + '</p>');
+  $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
+  $data.find('.pub').html('<p>' + this.publishedOn + '</p>');
   $data.find('.artbody').html(this.artbody);
-  $data.find('.pub').html("<p>" + this.publishedOn + "</p>");
-  $data.find('.cat').html("<p>" + this.category + "</p>");
+  $data.find('.cat').html('<p>' + this.category + '</p>');
   $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
   $('main').append($data);
 };

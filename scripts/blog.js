@@ -20,10 +20,21 @@ blog.render = function(){
     $('article p:not(:first-child)').hide();
     $('main').on('click', '.button', function(event) {
       event.preventDefault();
-      // Trying a toggle Feature -- Seems to work -- Now only targets
-      //not first paragram
-      $(this).parent().find('p:not(:first-child)').toggle();
+      // Shows more paragrahs. Makes a New Show Less Button. Detaches Show More Button
+      $(this).parent().find('p:not(:first-child)').show();
+      $(this).parent().append('<button class ="less">' + 'Show Less' + "</button>");
+      $(this).detach();
     });
+
+    $('main').on('click', '.less', function(event) {
+      event.preventDefault();
+      // Hides All But first paragraph.Makes a Show more Button. Detaches show less button. 
+      $(this).parent().find('p:not(:first-child)').hide();
+      $(this).parent().append('<button class ="button">' + 'Show More' + "</button>");
+      $(this).detach();
+    });
+
+
   };
 
 };
@@ -52,14 +63,13 @@ blog.filterPopAuthor = function() {
       a = a.author;
       b = b.author;
       return a<b ? -1 : a>b ? 1 : 0;
-      console.log('this works')
     });
   $('#authFilter').append('<option class="'+ blog.rawData[0].author +'">' + blog.rawData[0].author + '</option>')
   for (var i = 1; i < blog.rawData.length; i++){
     var $optionAuth = blog.rawData[i].author;
       if($optionAuth !== blog.rawData[i-1].author) {
     $('#authFilter').append('<option class="'+ blog.rawData[i].author +'">' + blog.rawData[i].author + '</option>');
-    console.log($optionAuth);
+    // console.log($optionAuth);
     };
   };
 };
