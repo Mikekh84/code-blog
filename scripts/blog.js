@@ -13,8 +13,10 @@ blog.render = function(){
     art.toHTML();
   };
   //Loads the Filter dropdowns.
+  $('#bio').hide()
   blog.popCatDropDown();
   blog.popAuthDropDown();
+
 };
 
 blog.truncateArticles = function() {
@@ -71,3 +73,11 @@ blog.popAuthDropDown = function() {
     };
   };
 };
+
+blog.toggleAbout = function() {
+  $('#about').on('click', function() {
+    $('#bio').toggle(400);
+    $('article').toggle(400);
+    $('form').toggle(400);
+  })
+}
