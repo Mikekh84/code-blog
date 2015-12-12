@@ -16,7 +16,7 @@ blog.render = function(){
   $('#bio').hide()
   blog.popCatDropDown();
   blog.popAuthDropDown();
-
+  blog.showArticles();
 };
 
 blog.truncateArticles = function() {
@@ -80,4 +80,13 @@ blog.toggleAbout = function() {
     $('article').toggle(400);
     $('form').toggle(400);
   })
+};
+
+blog.showArticles = function() {
+  $('#home').on('click', function(event){
+    event.preventDefault();
+    $('article').show(400);
+    $('#bio').hide(400);
+    $('form').show(400);
+  });
 }
