@@ -14,6 +14,7 @@ blog.render = function(){
   };
   //Loads the Filter dropdowns.
   $('#bio').hide()
+  $('#template').hide();
   blog.popCatDropDown();
   blog.popAuthDropDown();
   blog.showArticles();
@@ -79,6 +80,7 @@ blog.toggleAbout = function() {
     $('#bio').toggle(400);
     $('article').toggle(400);
     $('form').toggle(400);
+    $('#template').hide();
   })
 };
 
@@ -88,5 +90,15 @@ blog.showArticles = function() {
     $('article').show(400);
     $('#bio').hide(400);
     $('form').show(400);
+    $('#template').hide();
   });
-}
+};
+
+blog.filterbyAuthor = function() {
+  $('#authFilter').change(function(){
+  var $selectedAuth =$('#authFilter').find(':selected').text().replace(/\s/g, '');
+  $('article').hide()
+  $('.'+$selectedAuth).show();
+    console.log($('#authFilter').find(':selected').text().replace(/\s/g, ''));
+  });
+};

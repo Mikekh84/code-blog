@@ -9,7 +9,7 @@ var Article = function(props) {
 Article.prototype.toHTML = function() {
   var $data = $('.template').clone();
   $data.removeClass('template');
-  $data.addClass('article');
+  $data.addClass(this.author.replace(/\s/g, ''));
   $data.attr('id', this.heading);
   $data.find('.heading').html('<p>' + this.heading  + '</p>');
   $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
@@ -25,6 +25,7 @@ Article.prototype.toHTML = function() {
 $(document).ready(blog.render());
 $(document).ready(blog.truncateArticles());
 $(document).ready(blog.toggleAbout());
+$(document).ready(blog.filterbyAuthor());
 
 
 
