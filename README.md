@@ -1,3 +1,3 @@
 # code-blog
-Code Copied from Robert E. Hill for testing.
-Should not be graded yet.
+Used code to populate originally from Robert.
+Used Swaintek code to help with figuring out how to filter and escape spaces in authors.

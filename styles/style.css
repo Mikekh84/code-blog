@@ -1,3 +1,13 @@
+body {
+  background-color: black;
+}
+
+#bio {
+  background-color: #e6e6e6;
+  color: black;
+  padding: 1rem;
+  margin: 5rem;
+}
 img {
   display:block;
   max-width: 10em;
@@ -9,4 +19,34 @@ li {
     display: inline;
     list-style-type: none;
     padding-right: 10em;
+    background-color: black;
+    color: white;
+    margin-bottom: 0%;
+}
+
+ul {
+  margin-bottom: 0%;
+  text-align: center;
+  padding-bottom: 0%;
+}
+
+
+article {
+  background-color: #e6e6e6;
+  padding: 1rem;
+  margin: 5rem;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
 }
