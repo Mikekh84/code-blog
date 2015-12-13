@@ -94,11 +94,24 @@ blog.showArticles = function() {
   });
 };
 
-blog.filterbyAuthor = function() {
-  $('#authFilter').change(function(){
-  var $selectedAuth =$('#authFilter').find(':selected').text().replace(/\s/g, '');
+blog.filterByAuthor = function() {
+  $('#authFilter').change(function() {
+  var $selectedAuth = $('#authFilter').find(':selected').text().replace(/\s/g, '');
   $('article').hide()
   $('.'+$selectedAuth).show();
-    console.log($('#authFilter').find(':selected').text().replace(/\s/g, ''));
+    console.log('Auth Filter selected');
+  })
+};
+
+blog.filterByCat = function() {
+  $('#catFilter').change(function() {
+    $('article').hide()
+  var $selectedCat = $('#catFilter').find(':selected').text();
+  $('.'+$selectedCat).parent().show();
+  $('select #dropDownCat').on('click' , function(){
+    $('article').show();
+  })
+    console.log('Cat Filter selected');
+    console.log(this);
   });
 };

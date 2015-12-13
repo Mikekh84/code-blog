@@ -15,7 +15,7 @@ Article.prototype.toHTML = function() {
   $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
   $data.find('.pub').html('<p>' + this.publishedOn + '</p>');
   $data.find('.artbody').html(this.artbody);
-  $data.find('.cat').html('<p>' + this.category + '</p>');
+  $data.find('.cat').html('<p>' + this.category + '</p>').addClass(this.category);
   $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
   $('main').append($data);
 };
@@ -25,7 +25,8 @@ Article.prototype.toHTML = function() {
 $(document).ready(blog.render());
 $(document).ready(blog.truncateArticles());
 $(document).ready(blog.toggleAbout());
-$(document).ready(blog.filterbyAuthor());
+$(document).ready(blog.filterByAuthor());
+$(document).ready(blog.filterByCat());
 
 
 
