@@ -34,7 +34,7 @@ ul {
 article {
   background-color: #e6e6e6;
   padding: 1rem;
-  margin: 5rem;
+  margin: 2rem;
 }
 
 header {
@@ -53,4 +53,5 @@ nav a {
 
 nav {
   text-align: center;
+  background-color: white;
 }
