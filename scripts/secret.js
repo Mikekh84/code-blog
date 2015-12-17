@@ -9,7 +9,7 @@ preveiw.getFormInfo = function(){
     var formAuthor = $('#formAuthor').val();
     var formAuthorUrl = $('#formAuthorUrl').val();
     var formCategory = $('#formCategory').val();
-    var formArtBody = marked($('#formArtBody').val());
+    var formArtBody = $('#formArtBody').val();
 
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -25,6 +25,9 @@ preveiw.getFormInfo = function(){
     $('#preview').find('.artbody').html(marked(formArtBody));
     $('#preview').find('.pub').html("<p>" + today + "</p>");
     $('#preview').find('.cat').html("<p>" + formCategory + "</p>");
+    $('code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
     $('#submitButton').on('click', function(event){
       event.preventDefault();
       var newPost = {
@@ -33,16 +36,16 @@ preveiw.getFormInfo = function(){
       author: formAuthor,
       authorUrl: formAuthorUrl,
       publishedOn: today,
-      artbody: formArtBody
+      artbody:formArtBody
       }
 
       var jsonPost = JSON.stringify(newPost);
       console.log(jsonPost);
-      $('#stringified').html(jsonPost);
+      $('#stringified').val(jsonPost);
 
-    })
-  })
-}
+    });
+  });
+};
 // $(function() {
   preveiw.getFormInfo();
 // })
