@@ -1,6 +1,6 @@
-var preveiw = {}
+var preview = {}
 
-preveiw.getFormInfo = function(){
+preview.getFormInfo = function(){
 
   $('#formInfo').children().on('blur' ,function(event){
 
@@ -47,5 +47,5 @@ preveiw.getFormInfo = function(){
   });
 };
 // $(function() {
-  preveiw.getFormInfo();
+  preview.getFormInfo();
 // })

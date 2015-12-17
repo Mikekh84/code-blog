@@ -12,12 +12,16 @@ blog.render = function(){
     var art = new Article(blog.rawData[i]);
     art.toHTML();
   };
+  $('code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
   //Loads the Filter dropdowns.
   $('#bio').hide()
   $('#template').hide();
   blog.popCatDropDown();
   blog.popAuthDropDown();
   blog.showArticles();
+
 };
 
 blog.truncateArticles = function() {

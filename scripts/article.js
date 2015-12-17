@@ -14,7 +14,7 @@ Article.prototype.toHTML = function() {
   $data.find('.heading').html('<p>' + this.heading  + '</p>');
   $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
   $data.find('.pub').html('<p>' + this.publishedOn + '</p>');
-  $data.find('.artbody').html(this.artbody);
+  $data.find('.artbody').html(marked(this.artbody));
   $data.find('.cat').html('<p>' + this.category + '</p>').addClass(this.category);
   $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
   $('main').append($data);
