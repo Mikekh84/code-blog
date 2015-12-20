@@ -1,0 +1,33 @@
+#bio {
+  padding: 1rem;
+  margin: 5rem;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  background-color: white;
+}
+
+img {
+  display:block;
+  max-width: 30%;
+  padding: 1em;
+}
+
+form {
+  text-align: center;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+    }

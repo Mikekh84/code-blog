@@ -12,12 +12,16 @@ blog.render = function(){
     var art = new Article(blog.rawData[i]);
     art.toHTML();
   };
+  $('code').each(function(i, block) {
+    hljs.highlightBlock(block);
+    });
   //Loads the Filter dropdowns.
   $('#bio').hide()
   $('#template').hide();
   blog.popCatDropDown();
   blog.popAuthDropDown();
   blog.showArticles();
+
 };
 
 blog.truncateArticles = function() {
@@ -99,7 +103,7 @@ blog.filterByAuthor = function() {
   var $selectedAuth = $('#authFilter').find(':selected').text().replace(/\s/g, '');
   $('article').hide()
   $('.'+$selectedAuth).show();
-    console.log('Auth Filter selected');
+    console.log($selectedAuth);
   })
 };
 
