@@ -103,7 +103,7 @@ blog.filterByAuthor = function() {
   var $selectedAuth = $('#authFilter').find(':selected').text().replace(/\s/g, '');
   $('article').hide()
   $('.'+$selectedAuth).show();
-    console.log('Auth Filter selected');
+    console.log($selectedAuth);
   })
 };
 

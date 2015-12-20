@@ -5,19 +5,24 @@ var Article = function(props) {
   this.publishedOn = props.publishedOn;
   this.artbody = props.artbody;
   this.category = props.category;
+  this.authclass = props.author.replace(/\s/g, '')
 };
 Article.prototype.toHTML = function() {
-  var $data = $('.template').clone();
-  $data.removeClass('template');
-  $data.addClass(this.author.replace(/\s/g, ''));
-  $data.attr('id', this.heading);
-  $data.find('.heading').html('<p>' + this.heading  + '</p>');
-  $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
-  $data.find('.pub').html('<p>' + this.publishedOn + '</p>');
-  $data.find('.artbody').html(marked(this.artbody));
-  $data.find('.cat').html('<p>' + this.category + '</p>').addClass(this.category);
-  $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
-  $('main').append($data);
+  // var $data = $('.template').clone();
+  // $data.removeClass('template');
+  // $data.addClass(this.author.replace(/\s/g, ''));
+  // $data.attr('id', this.heading);
+  // $data.find('.heading').html('<p>' + this.heading  + '</p>');
+  // $data.find('.author').html('<p>BY: <a href="'+ this.authorUrl + '">' + this.author + '</a></p>');
+  // $data.find('.pub').html('<p>' + this.publishedOn + '</p>');
+  // $data.find('.artbody').html(marked(this.artbody));
+  // $data.find('.cat').html('<p>' + this.category + '</p>').addClass(this.category);
+  // $data.find('.artbody').append('<button class = "button">' + 'Show More' + '</button>');
+
+  var template = $('#article-template').html();
+  var compliedTemplate = Handlebars.compile(template);
+  var compiledHTML = compliedTemplate(this);
+  $('main').append(compiledHTML);
 };
 
 
